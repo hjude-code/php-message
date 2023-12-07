@@ -10,6 +10,12 @@
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"copy":{
+			"type":"string",
+			"default":"message here"
+		}
+	},
 	"textdomain": "php-message",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
