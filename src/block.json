@@ -8,7 +8,16 @@
 	"icon": "smiley",
 	"description": "Allows dynamic message to be generated on live site",
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {},
+		"typography": {
+			"fontSize": true
+		},
+		"spacing": {
+			"padding":true,
+			"margin":true
+		},
+		"defaultStylePicker": true
 	},
 	"attributes": {
 		"copy":{

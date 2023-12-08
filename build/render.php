@@ -2,7 +2,15 @@
 /**
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
+
+ if(isset($_GET['message'])){
+	$message = $_GET['message'];
+ }else{
+	$message = $attributes['copy'];
+ }
+
+
 ?>
-<p <?php echo get_block_wrapper_attributes(); ?>>
-	<?php esc_html_e( 'Php-message – hello from a dynamic block!', 'php-message' ); ?>
-</p>
+<h1 <?php echo get_block_wrapper_attributes(); ?>>
+	<?php echo $message; ?>
+</h1>

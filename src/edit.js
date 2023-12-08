@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,10 +29,23 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit(props) {
+
+	const {
+		attributes:{copy},
+		setAttributes,
+		setClass
+	} = props;
+
+	const onChangeCopy = (newCopy) =>{
+		setAttributes({copy: newCopy});
+	}
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Php-message – hello from the editor!', 'php-message' ) }
-		</p>
+		<h1 { ...useBlockProps() }>
+			<RichText
+			value={copy}
+			onChange={onChangeCopy}
+			/>
+		</h1>
 	);
 }
